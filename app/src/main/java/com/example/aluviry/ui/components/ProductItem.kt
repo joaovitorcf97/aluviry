@@ -1,6 +1,5 @@
 package com.example.aluviry.ui.components
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -28,11 +27,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import coil.compose.AsyncImage
 import com.example.aluviry.R
 import com.example.aluviry.extensions.toBrazilCurrency
 import com.example.aluviry.model.Product
-import com.example.aluviry.ui.theme.Pink40
-import com.example.aluviry.ui.theme.Purple40
 
 @Composable
 fun ProductItem(product: Product) {
@@ -56,16 +54,16 @@ fun ProductItem(product: Product) {
                     )
                     .fillMaxWidth()
             ) {
-                Image(
-                    painter = painterResource(id = R.drawable.ic_launcher_background),
+                AsyncImage(
+                    model = product.image,
                     contentDescription = "Imagem do produto",
                     Modifier
                         .size(imageSize)
                         .offset(y = imageSize / 2)
                         .clip(shape = CircleShape)
                         .align(alignment = Alignment.BottomCenter),
-                    contentScale = ContentScale.Crop
-
+                    contentScale = ContentScale.Crop,
+                    placeholder = painterResource(id = R.drawable.ic_launcher_background)
                 )
             }
             Spacer(modifier = Modifier.height(imageSize / 2))
