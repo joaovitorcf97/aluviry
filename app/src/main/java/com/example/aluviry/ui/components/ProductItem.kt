@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -27,6 +28,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.aluviry.R
 import com.example.aluviry.extensions.toBrazilCurrency
 import com.example.aluviry.model.Product
 import com.example.aluviry.ui.theme.Pink40
@@ -46,13 +48,16 @@ fun ProductItem(product: Product) {
                     .height(imageSize)
                     .background(
                         brush = Brush.horizontalGradient(
-                            colors = listOf(Purple40, Pink40)
+                            colors = listOf(
+                                MaterialTheme.colorScheme.primary,
+                                MaterialTheme.colorScheme.secondary
+                            )
                         )
                     )
                     .fillMaxWidth()
             ) {
                 Image(
-                    painter = painterResource(id = product.image),
+                    painter = painterResource(id = R.drawable.ic_launcher_background),
                     contentDescription = "Imagem do produto",
                     Modifier
                         .size(imageSize)
