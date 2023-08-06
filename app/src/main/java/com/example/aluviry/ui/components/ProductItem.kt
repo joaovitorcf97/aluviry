@@ -33,7 +33,7 @@ import com.example.aluviry.extensions.toBrazilCurrency
 import com.example.aluviry.model.Product
 
 @Composable
-fun ProductItem(product: Product) {
+fun ProductItem(product: Product, modifier: Modifier = Modifier) {
     Surface(shape = RoundedCornerShape(15.dp), shadowElevation = 4.dp) {
         Column(
             Modifier

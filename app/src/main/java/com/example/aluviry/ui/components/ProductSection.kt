@@ -16,8 +16,8 @@ import androidx.compose.ui.unit.sp
 import com.example.aluviry.model.Product
 
 @Composable
-fun ProductSection(title: String, products: List<Product>) {
-    Column {
+fun ProductSection(title: String, products: List<Product>, modifier: Modifier = Modifier) {
+    Column(modifier) {
         Text(
             text = title,
             Modifier.padding(start = 16.dp, bottom = 16.dp),
@@ -32,7 +32,7 @@ fun ProductSection(title: String, products: List<Product>) {
             contentPadding = PaddingValues(horizontal = 16.dp)
         ) {
             items(products) { product ->
-                ProductItem(product = product)
+                ProductItem(product = product, Modifier.padding(horizontal = 16.dp))
             }
         }
     }
