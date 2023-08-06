@@ -1,4 +1,4 @@
-package com.example.aluviry
+package com.example.aluviry.ui.activities
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
