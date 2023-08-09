@@ -18,15 +18,17 @@
             android:name=".ui.activities.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Aluviry"></activity>
-        <activity
-            android:name=".ui.activities.ProductFormActivity"
-            android:exported="true">
+            android:theme="@style/Theme.Aluviry"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"></action>
                 <category android:name="android.intent.category.LAUNCHER"></category>
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.activities.ProductFormActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize"></activity>
     </application>
 
 </manifest>
